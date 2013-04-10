@@ -1,4 +1,6 @@
 #!/usr/bin/python
+OUTFILE=os.path.expanduser("~/ontime.jsonlines")
+
 import cgi
 form = cgi.FieldStorage()
 print 'Content-type: text/plain\r\n'
@@ -10,7 +12,6 @@ data = {
     'ready_time': form.getfirst('ready_time', None),
     }
 import json
-with open(
-    '/tmp/data', 'w') as fd:
+with open(OUTFILE, 'a') as fd:
     fd.write(json.dumps(data))
 print 'OK'
