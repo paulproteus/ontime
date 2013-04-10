@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import os
 OUTFILE=os.path.expanduser("~/ontime.jsonlines")
 
 import cgi
